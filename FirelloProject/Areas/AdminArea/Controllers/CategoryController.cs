@@ -16,7 +16,8 @@ namespace FirelloProject.Areas.AdminArea.Controllers
 
         public IActionResult Index()
         {
-            return View(_appDbContext.Products.ToList());
+            return View(_appDbContext.Categories.ToList());
+
         }
 
         public IActionResult Detail(int id)
