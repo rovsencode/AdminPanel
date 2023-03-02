@@ -26,5 +26,18 @@ namespace FirelloProject.Areas.AdminArea.Controllers
             if (category == null) return NotFound();
             return View(category);
         }
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Category category)
+        {
+            _appDbContext.Categories.Add(category);
+            _appDbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
